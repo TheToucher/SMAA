@@ -1,0 +1,27 @@
+MaterialDef SMAA EdgeDetection {
+
+    MaterialParameters {
+        Int NumSamples
+        Int NumSamplesDepth
+
+        Texture2D Texture
+        Texture2D DepthTexture 
+    }
+
+    Technique {
+        VertexShader GLSL150:   MatDefs/Post/TTTR/SMAA/SMAA.vert
+        FragmentShader GLSL150: MatDefs/Post/TTTR/SMAA/SMAA_EdgeDetection.frag
+
+        WorldParameters {
+
+        }
+        
+        Defines {
+            VS_EDGEDETECTION
+
+        }
+
+    }
+
+
+}

@@ -1,0 +1,32 @@
+MaterialDef SMAA BlendWeightCalculation {
+
+    MaterialParameters {
+        Int NumSamples
+        Int NumSamplesDepth
+
+        Texture2D   EdgesTexture
+        Texture2D   AreaTexture
+        Texture2D   SearchTexture
+
+        //Texture2D Texture
+        //Texture2D DepthTexture 
+    }
+
+    Technique {
+        VertexShader GLSL150:   MatDefs/Post/TTTR/SMAA/SMAA.vert
+        FragmentShader GLSL150: MatDefs/Post/TTTR/SMAA/SMAA_BlendingWeightCalculation.frag
+
+        WorldParameters {
+
+        }
+        
+        Defines {
+            VS_BLENDING
+
+            //SMAA_DISABLE_DIAG_DETECTION
+        }
+
+    }
+
+
+}
